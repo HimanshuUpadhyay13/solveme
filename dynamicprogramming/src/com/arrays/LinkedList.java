@@ -15,7 +15,6 @@ public class LinkedList {
     }
 
     /**
-     *
      * @param data
      */
     public void insert(int data) {
@@ -33,30 +32,40 @@ public class LinkedList {
     }
 
     /**
-     *
      * @param node
      * @param pos
      */
-    public void printNthElementFromLast(Node node, int pos)
-    {
-        Node slowPointer=node;
-        Node fastPointer=node;
-        int count=0;
-        while(count<pos && fastPointer.next!=null)
-        {
-            fastPointer=fastPointer.next;
+    public void printNthElementFromLast(Node node, int pos) {
+        Node slowPointer = node;
+        Node fastPointer = node;
+        int count = 0;
+        while (count < pos && fastPointer.next != null) {
+            fastPointer = fastPointer.next;
             count++;
         }
-        while(fastPointer!=null)
-        {
-            slowPointer=slowPointer.next;
-            fastPointer=fastPointer.next;
+        while (fastPointer != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next;
         }
-        System.out.println(pos+"th element from back is : "+slowPointer.data);
+        System.out.println(pos + "th element from back is : " + slowPointer.data);
     }
 
     /**
-     * 
+     * @param node
+     */
+    void printMiddle(Node node) {
+        Node fastPointer = node;
+        Node slowPointer = node;
+        while (fastPointer != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+        System.out.println("Middle element is :" + slowPointer.data);
+    }
+
+
+
+    /**
      * @param data
      * @param position where you want to insert data
      */
@@ -114,7 +123,7 @@ public class LinkedList {
         list.print();
         System.out.println("");
 
-        list.printNthElementFromLast(list.head,4);
+        list.printNthElementFromLast(list.head, 4);
 
 
     }
