@@ -64,7 +64,6 @@ public class LinkedList {
     }
 
 
-
     /**
      * @param data
      * @param position where you want to insert data
@@ -95,9 +94,6 @@ public class LinkedList {
         }
     }
 
-    /**
-     *
-     */
     public void print() {
         Node currentNode = head;
         while (currentNode != null) {
@@ -105,6 +101,20 @@ public class LinkedList {
             currentNode = currentNode.next;
         }
         System.out.print(currentNode);
+    }
+
+    public Node deleteMiddleElement(Node head) {
+        if (head == null) return null;
+        Node slowPointer = head;
+        Node fastPointer = head;
+        Node prevPointer = null;
+        while (fastPointer != null && fastPointer.next != null) {
+            prevPointer = slowPointer;
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+        }
+        prevPointer.next = slowPointer.next;
+        return head;
     }
 
     public static void main(String[] args) {
@@ -123,8 +133,11 @@ public class LinkedList {
         list.print();
         System.out.println("");
 
-        list.printNthElementFromLast(list.head, 4);
 
+        list.printNthElementFromLast(list.head, 4);
+        list.deleteMiddleElement(list.head);
+        list.print();
+        // E.g-->> 6 -6 8 4 -12 9 8 -8
 
     }
 
