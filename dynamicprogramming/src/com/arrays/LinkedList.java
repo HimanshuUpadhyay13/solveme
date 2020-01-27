@@ -1,5 +1,8 @@
 package com.arrays;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
 
     Node head;
@@ -117,15 +120,51 @@ public class LinkedList {
         return head;
     }
 
+    /**
+     *
+     * @param head
+     * @return
+     */
+    //1-next =>2-next =>5-next =>4-next =>41-next =>42-next =>null
+    public Node removeDuplicateFromSortedLinkedList(Node head)
+    {
+        Set<Integer> unique=new HashSet<>();
+        Node curr=head;
+        Node prev=null;
+        while(curr!=null)
+        {
+            if(unique.contains(curr.data))
+            {
+                //System.out.println(curr.data+ ":::::"+unique);
+
+                if(curr.next!=null) {
+                    prev=curr.next;
+                    curr = curr.next.next;
+                }
+                else {
+                    System.out.println(prev.data+ ":::::"+unique);
+                    prev.next=null;
+                    curr = prev;
+                }
+                }
+            else
+            {
+                unique.add(curr.data);
+                curr=curr.next;
+            }
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
 
         LinkedList list = new LinkedList();
         list.insert(1);
         list.insert(2);
         list.insert(3);
+        list.insert(3);
         list.insert(4);
-        list.insert(41);
-        list.insert(42);
+        list.insert(4);
         //System.out.println(list);
         list.print();
         System.out.println("");
@@ -137,7 +176,11 @@ public class LinkedList {
         list.printNthElementFromLast(list.head, 4);
         list.deleteMiddleElement(list.head);
         list.print();
-        // E.g-->> 6 -6 8 4 -12 9 8 -8
+        list.removeDuplicateFromSortedLinkedList(list.head);
+        System.out.println("");
+        list.print();
+
+
 
     }
 
