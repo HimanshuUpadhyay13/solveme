@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/robotic-rover.iml" filepath="$PROJECT_DIR$/robotic-rover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" filepath="$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roborover/roborover.iml" filepath="$PROJECT_DIR$/roborover/roborover.iml" />
     </modules>
   </component>
 </project>
