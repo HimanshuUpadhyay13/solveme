@@ -5,10 +5,7 @@ public class EditDistance {
     public static int minDistance(String word1, String word2) {
         int rows = word1.length();
         int cols = word2.length();
-        if (word1.length() == 0) return word2.length();
-        if (word2.length() == 0) return word1.length();
         int[][] min = new int[rows + 1][cols + 1];
-        int j = 0;
         for (int row = 0; row <= rows; row++) {
             for (int col = 0; col <= cols; col++) {
                 if (row == 0) {
