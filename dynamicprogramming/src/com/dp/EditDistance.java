@@ -1,5 +1,9 @@
 package com.dp;
 
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class EditDistance {
 
     public static int minDistance(String word1, String word2) {
@@ -34,8 +38,9 @@ public class EditDistance {
     }
 
     public static void main(String[] args) {
-        String word1 = "iamhimanshu";
-        String word2 = "upadhyay";
+        String word1 = "himanshu";
+        String word2 = "sonal";
         System.out.println(minDistance(word1, word2));
     }
+
 }

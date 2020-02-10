@@ -1,6 +1,8 @@
 package com.arrays;
 
 import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Set;
 
 public class LinkedList {
@@ -171,8 +173,6 @@ public class LinkedList {
         list.insertAt(5, 2);
         list.print();
         System.out.println("");
-
-
         list.printNthElementFromLast(list.head, 4);
         list.deleteMiddleElement(list.head);
         list.print();
